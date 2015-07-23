@@ -13,4 +13,4 @@ This uses gradle.properties to run the com.darkstar.ngram.Main.main() method wit
 You may modify gradle.properties to change the input. The first argument is a file on your file system.
 The second argument is a number representing the maximum ngram to be found.
 
-You may also run this by running the com.darkstar.ngram.Main.main() method.
+You may also run this by running the com.darkstar.ngram.Main.main() method located in src/main/groovy.
