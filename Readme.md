@@ -1,4 +1,6 @@
-Prerequisites: JDK > 7.0 installed.
+Prerequisites: JDK > 7.0 installed. Git.
+
+To download: git clone https://github.com/trevorism/ngram.git
 
 This software is packaged with a build file. You may use gradlew (linux) or gradlew.bat (windows).
 
