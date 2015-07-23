@@ -12,7 +12,7 @@ class InputParserTest {
 
     @Test
     public void "a file can be found by the InputParser"(){
-        Path path = Paths.get("src/test/resources/sampleFile.txt")
+        Path path = Paths.get("sampleFile.txt")
         String pathAsString = path.toAbsolutePath().toString()
 
         InputParser parser = new InputParser()

@@ -8,9 +8,11 @@ import com.darkstar.ngram.model.NGramWithFrequency
  */
 class ComputeNGrams {
 
+
+    //Computes all the ngrams (unordered)
     public List<NGramWithFrequency> computeNgrams(String inputText, int maxNGramLength){
-        Map<String, Integer> foundNGrams = [:]
-        String [] words = inputText.split(" ")
+        Map<String, Integer> foundNGrams = [:] //Maps ngrams to frequencies
+        String [] words = inputText.split(Main.NGRAM_DELIMITER)
 
         for(int i=0; i < maxNGramLength; i++){
             int nGramLength = i+1;
@@ -19,6 +21,7 @@ class ComputeNGrams {
         return foundNGrams.collect {k,v -> new NGramWithFrequency(nGram: k, frequency: v)}
     }
 
+    //Finds all the ngrams of the given length
     private static void findNGramsOfLength(Map<String, Integer> foundNGrams, String[] words, int nGramLength) {
         for (int i = 0; i < words.length; i++) {
             String ngram = buildNGram(nGramLength, i, words)
@@ -28,6 +31,7 @@ class ComputeNGrams {
         }
     }
 
+    //Constructs the ngram from the words array
     private static buildNGram(int nGramLength, int currentIndex, String[] words) {
         String ngram = "";
         for (int i = 0; i < nGramLength; i++) {
@@ -41,6 +45,7 @@ class ComputeNGrams {
         return ngram
     }
 
+    //Adds the constructed ngram to the frequency map
     private static addNgramToMap(Map<String, Integer> foundNGrams, String ngram) {
         if (foundNGrams.containsKey(ngram)) {
             foundNGrams[ngram] = foundNGrams[ngram] + 1;

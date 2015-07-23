@@ -18,7 +18,7 @@ class NGramWithFrequencyComparator implements Comparator<NGramWithFrequency>{
     }
 
     private static int countSpaces(NGramWithFrequency nGramWithFrequency) {
-        nGramWithFrequency.nGram.split(" ").length
+        nGramWithFrequency.nGram.split(Main.NGRAM_DELIMITER).length
 
     }
 }

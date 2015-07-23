@@ -7,6 +7,8 @@ import com.darkstar.ngram.model.NGramWithFrequency
  * @author tbrooks
  */
 class Main {
+    public static String NGRAM_DELIMITER = " "
+
 
     public static void main(String [] args){
         validateInput(args)
