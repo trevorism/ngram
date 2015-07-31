@@ -22,7 +22,7 @@ class InputParser {
         }
     }
 
-    private parseIntegerValue(String m) {
+    private static parseIntegerValue(String m) {
         int mValue = Integer.parseInt(m);
         if (mValue <= 0) {
             throw new RuntimeException()
@@ -30,7 +30,7 @@ class InputParser {
         return mValue;
     }
 
-    private parsePath(String filepath) {
+    private static parsePath(String filepath) {
         String text = new File(filepath)?.text
         if (!text) {
             throw new RuntimeException()

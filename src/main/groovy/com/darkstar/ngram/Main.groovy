@@ -14,14 +14,14 @@ class Main {
         validateInput(args)
 
         List<NGramWithFrequency> ngrams = computeNGramsFromInput(args)
-        ngrams.sort(new NGramWithFrequencyComparator())
+        Collections.sort(ngrams, new NGramWithFrequencyComparator())
 
         ngrams.each {
             println it
         }
     }
 
-    private static computeNGramsFromInput(String[] args) {
+    private static List<NGramWithFrequency> computeNGramsFromInput(String[] args) {
         InputParser inputParser = new InputParser()
         String text = inputParser.parseTextFromFilePath(args[0])
         int mValue = inputParser.parseInteger(args[1])
